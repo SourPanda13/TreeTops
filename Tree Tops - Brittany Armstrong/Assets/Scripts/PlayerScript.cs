@@ -43,6 +43,14 @@ public class PlayerScript : MonoBehaviour
         Vector2 playerVelocity = new Vector2(controlThrow * PlayerSpeed * Time.deltaTime, playerRB.velocity.y);
         playerRB.velocity = playerVelocity;
 
+        //Rotating the character
+        if(Input.GetAxis("Horizontal") < 0){
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        if(Input.GetAxis("Horizontal") > 0){
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
         bool playerHorizontalMove = false;
         if(Mathf.Abs(controlThrow) > 0){
             playerHorizontalMove = true;
