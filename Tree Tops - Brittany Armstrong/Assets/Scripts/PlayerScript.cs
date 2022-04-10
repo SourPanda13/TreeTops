@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour
 
     float PlayerSpeed = 10000;
     float JumpSpeed = 5;
-    float RollSpeed = 5;
+    float RollSpeed = 5000;
     int Life = 3;
     bool IsAlive = true;
 
@@ -54,6 +54,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         bool playerHorizontalMove = false;
+
         if(Mathf.Abs(controlThrow) > 0){
             playerHorizontalMove = true;
         }
@@ -88,7 +89,7 @@ public class PlayerScript : MonoBehaviour
             playerAnimator.SetBool("CanRoll", true);
             bool isTouchingGround = playerCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"));
             if (isTouchingGround){
-                Vector2 RollVelocity = new Vector2(0, RollSpeed);
+                Vector2 RollVelocity = new Vector2(RollSpeed, 0);
                 playerRB.velocity += RollVelocity;
             }
         }
