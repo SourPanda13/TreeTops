@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
 
     float PlayerSpeed = 10000;
     float JumpSpeed = 5;
+    float RollSpeed = 5;
     int Life = 3;
     bool IsAlive = true;
 
@@ -30,6 +31,7 @@ public class PlayerScript : MonoBehaviour
         if (IsAlive){
             PlayerMovement();
             Jump();
+            Roll();
         }
 
         if (Input.GetKey(KeyCode.RightArrow)){
@@ -77,6 +79,22 @@ public class PlayerScript : MonoBehaviour
         }
         else{
             playerAnimator.SetBool("CanJump", false);
+        }
+    }
+
+    private void Roll()
+    {
+        if (Input.GetButtonDown("Vertical")){
+            playerAnimator.SetBool("CanRoll", true);
+            bool isTouchingGround = playerCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"));
+            if (isTouchingGround){
+                Vector2 RollVelocity = new Vector2(0, RollSpeed);
+                playerRB.velocity += RollVelocity;
+            }
+        }
+        else
+        {
+            playerAnimator.SetBool("CanRoll", false);
         }
     }
 
