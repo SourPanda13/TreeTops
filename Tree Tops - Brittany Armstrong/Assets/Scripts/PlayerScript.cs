@@ -12,8 +12,8 @@ public class PlayerScript : MonoBehaviour
     [HideInInspector] public int AcornsCollected = 0;
 
     float PlayerSpeed = 10000;
-    float JumpSpeed = 5;
-    float RollSpeed = 5000;
+    float JumpSpeed = 1;
+    float RollSpeed = 1;
     int Life = 3;
     bool IsAlive = true;
 
@@ -70,7 +70,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     private void Jump(){
-        if (Input.GetButtonDown("Jump")){
+        if (Input.GetButton("Jump")){
             playerAnimator.SetBool("CanJump", true);
             bool isTouchingGround = playerCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"));
             if (isTouchingGround){
@@ -85,7 +85,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Roll()
     {
-        if (Input.GetButtonDown("Vertical")){
+        if (Input.GetButton("Vertical")){
             playerAnimator.SetBool("CanRoll", true);
             bool isTouchingGround = playerCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"));
             if (isTouchingGround){
