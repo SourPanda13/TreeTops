@@ -8,12 +8,10 @@ public class EnemyScript : MonoBehaviour
     Rigidbody2D EnemyRB;
     bool obstacleActive = true;
 
-    // Start is called before the first frame update
     void Start(){
         EnemyRB = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update(){
         
     }

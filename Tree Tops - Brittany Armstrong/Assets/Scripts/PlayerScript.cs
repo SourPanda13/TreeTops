@@ -17,7 +17,6 @@ public class PlayerScript : MonoBehaviour
     int Life = 3;
     bool IsAlive = true;
 
-    // Start is called before the first frame update
     void Start(){
         //Getting references of the components
         playerRB = GetComponent<Rigidbody2D>();
@@ -25,7 +24,6 @@ public class PlayerScript : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
     void Update(){
         //Checking the player is alive
         if (IsAlive){
