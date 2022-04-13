@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 127
+  controlID: 131
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -411,13 +411,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Environment/Background
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Environment/Background
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\GGPC\Documents\GitHub\TreeTops\Tree Tops - Brittany
     Armstrong
@@ -425,9 +425,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0450000
-    m_LastClickedID: 17872
-    m_ExpandedIDs: 00000000b4450000b645000000ca9a3b
+    m_SelectedIDs: a4520000
+    m_LastClickedID: 21156
+    m_ExpandedIDs: 00000000b4450000b6450000cc45000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,9 +576,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: a4520000
       m_LastClickedID: 0
-      m_ExpandedIDs: a0f8ffff38faffff64fbffff
+      m_ExpandedIDs: 58f5ffff34f8ffff14fbffff56fbffff64fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -638,9 +638,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -21.229134, y: 44.90157, z: -194.09189}
+    m_Target: {x: -115.27225, y: 32.902233, z: -202.63362}
     speed: 2
-    m_Value: {x: -22.365707, y: 41.201298, z: -193.56291}
+    m_Value: {x: -115.27225, y: 32.902233, z: -202.63362}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -691,9 +691,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 122.840096
+    m_Target: 86.50456
     speed: 2
-    m_Value: 117.55033
+    m_Value: 86.50456
   m_Ortho:
     m_Target: 1
     speed: 2
