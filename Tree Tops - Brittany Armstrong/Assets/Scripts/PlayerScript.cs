@@ -14,8 +14,9 @@ public class PlayerScript : MonoBehaviour
     float PlayerSpeed = 10000;
     float JumpSpeed = 1;
     float RollSpeed = 1;
-    int Life = 3;
+    int Life = 2;
     bool IsAlive = true;
+    bool GameEnded = false;
 
     void Start(){
         //Getting references of the components
@@ -30,6 +31,8 @@ public class PlayerScript : MonoBehaviour
             PlayerMovement();
             Jump();
             Roll();
+            //WinLevel();
+            //LoseLevel();
         }
 
         if (Input.GetKey(KeyCode.RightArrow)){
@@ -109,9 +112,27 @@ public class PlayerScript : MonoBehaviour
             Destroy(collision.gameObject);
             if(Life < 0){
                 IsAlive = false;
-                playerAnimator.SetTrigger("DeathTrigger");
+                //playerAnimator.SetTrigger("DeathTrigger");
                 Destroy(gameObject, 2);
+                LoseLevel();
             }
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.CompareTag("Environment")){
+            if (AcornsCollected >= 5){
+                WinLevel();
+            }
+        }
+    }
+    public void WinLevel(){
+        Debug.Log("You Win!");
+        GameEnded = true;
+    }
+
+    public void LoseLevel(){
+        Debug.Log("You Lose!");
+        GameEnded = true;
     }
 }

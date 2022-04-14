@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.CompareTag("Enemy")){
-            obstacleActive = false;
+            //obstacleActive = false;
             transform.localScale = new Vector3(Mathf.Sign(EnemyRB.velocity.x), 1, 1);
         }
     }
