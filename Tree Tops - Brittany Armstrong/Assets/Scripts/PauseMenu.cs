@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     //Variables
     public static bool GameIsPaused = false;
+    public static bool LevelDone = false;
     public GameObject pauseMenuUI;
     public GameObject restartMenuUI;
 
@@ -23,8 +24,10 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if(playerscript.GameEnded == true)
-        {
+        if (LevelDone == false){
+            Resume();
+        }
+        else{ 
             Restart();
         }
 
@@ -46,6 +49,11 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
+    public void Restart(){
+        restartMenuUI.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void LoadMenu(){
         //Loading the Main Menu via the build index
         Time.timeScale = 1f;
@@ -55,25 +63,6 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame(){
         Debug.Log("QUIT!");
         Application.Quit();
-    }
-
-    public void Restart()
-    {
-        restartMenuUI.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void LoadGame()
-    {
-        //Loading the Game via the build index
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void LoadGameMenu(){
-        //Loading the Main Menu via the build index
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 }

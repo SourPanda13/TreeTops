@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D playerRB;
     Animator playerAnimator;
     Collider2D playerCollider;
-    PauseMenu PauseMenu;
 
     [HideInInspector] public int AcornsCollected = 0;
 
@@ -125,10 +125,21 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Environment")){
             if (AcornsCollected >= 5){
                 WinLevel();
-                PauseMenu.Restart();
+                //Restart();
+            }
+            else{
+                LoseLevel();
             }
         }
     }
+
+    /*public GameObject restartMenuUI;
+
+    public void Restart()
+    {
+        restartMenuUI.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }*/
 
     public void WinLevel(){
         Debug.Log("You Win!");

@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour
 {
     //Variables
     Rigidbody2D EnemyRB;
-    bool obstacleActive = true;
+    //bool obstacleActive = true;
 
     void Start(){
         EnemyRB = GetComponent<Rigidbody2D>();
