@@ -10,7 +10,7 @@ public class LivesScript : MonoBehaviour
     [SerializeField] PlayerScript player;
 
     private void Start(){
-        player.Life = player.Life + 1;
+        player.Life += 1;
     }
 
     void Update()
