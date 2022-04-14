@@ -7,11 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     //Variables
     public static bool GameIsPaused = false;
-    public static bool LevelDone = false;
     public GameObject pauseMenuUI;
-    public GameObject restartMenuUI;
 
-    PlayerScript playerscript;
 
     void Update(){
         //Pausing and unpausing the game
@@ -24,13 +21,6 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if (LevelDone == false){
-            Resume();
-        }
-        else{ 
-            Restart();
-        }
-
     }
 
     public void Resume(){
@@ -41,17 +31,12 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
     }
 
-    private void Pause(){
+    public void Pause(){
         //Pausing the game
         pauseMenuUI.SetActive(true);
         //Stopping the time
         Time.timeScale = 0f;
         GameIsPaused = true;
-    }
-
-    public void Restart(){
-        restartMenuUI.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LoadMenu(){

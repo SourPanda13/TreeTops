@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D playerRB;
     Animator playerAnimator;
     Collider2D playerCollider;
+    RestartMenu menurestart;
 
     [HideInInspector] public int AcornsCollected = 0;
 
@@ -125,21 +126,12 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Environment")){
             if (AcornsCollected >= 5){
                 WinLevel();
-                //Restart();
             }
             else{
                 LoseLevel();
             }
         }
     }
-
-    /*public GameObject restartMenuUI;
-
-    public void Restart()
-    {
-        restartMenuUI.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }*/
 
     public void WinLevel(){
         Debug.Log("You Win!");
