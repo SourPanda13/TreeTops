@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviour
     float PlayerSpeed = 10000;
     float JumpSpeed = 1;
     float RollSpeed = 1;
-    int Life = 2;
+    public int Life = 2;
     bool IsAlive = true;
     public bool GameEnded = false;
 
