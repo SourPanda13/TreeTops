@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public void PlayGame(){
+        //Loads the game via the build index
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

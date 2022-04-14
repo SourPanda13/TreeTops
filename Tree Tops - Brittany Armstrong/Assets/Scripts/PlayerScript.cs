@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D playerRB;
     Animator playerAnimator;
     Collider2D playerCollider;
+    PauseMenu PauseMenu;
 
     [HideInInspector] public int AcornsCollected = 0;
 
@@ -16,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     float RollSpeed = 1;
     int Life = 2;
     bool IsAlive = true;
-    bool GameEnded = false;
+    public bool GameEnded = false;
 
     void Start(){
         //Getting references of the components
@@ -31,8 +32,6 @@ public class PlayerScript : MonoBehaviour
             PlayerMovement();
             Jump();
             Roll();
-            //WinLevel();
-            //LoseLevel();
         }
 
         if (Input.GetKey(KeyCode.RightArrow)){
@@ -71,6 +70,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     private void Jump(){
+        //Jumping
         if (Input.GetButton("Jump")){
             playerAnimator.SetBool("CanJump", true);
             bool isTouchingGround = playerCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"));
@@ -84,8 +84,8 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private void Roll()
-    {
+    private void Roll(){
+        //Rolling 
         if (Input.GetButton("Vertical")){
             playerAnimator.SetBool("CanRoll", true);
             bool isTouchingGround = playerCollider.IsTouchingLayers(LayerMask.GetMask("Foreground"));
@@ -107,6 +107,7 @@ public class PlayerScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        //Collision with enemies 
         if (collision.gameObject.CompareTag("Enemy")){
             Life--;
             Destroy(collision.gameObject);
@@ -120,12 +121,15 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D collision){
+        //Win conditions
         if (collision.gameObject.CompareTag("Environment")){
             if (AcornsCollected >= 5){
                 WinLevel();
+                PauseMenu.Restart();
             }
         }
     }
+
     public void WinLevel(){
         Debug.Log("You Win!");
         GameEnded = true;

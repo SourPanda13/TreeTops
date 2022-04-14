@@ -12,10 +12,6 @@ public class EnemyScript : MonoBehaviour
         EnemyRB = GetComponent<Rigidbody2D>();
     }
 
-    void Update(){
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.CompareTag("Enemy")){
             //obstacleActive = false;

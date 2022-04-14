@@ -10,6 +10,7 @@ public class AcornScript : MonoBehaviour
     [SerializeField] PlayerScript player;
 
     void Update(){
+        //Printing the acorn count
         AcornText.text = player.AcornsCollected.ToString();
     }
 }
