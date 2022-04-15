@@ -18,18 +18,17 @@ public class RestartMenu : MonoBehaviour
             }
             else{
                 Restart();
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
 
     }
 
     public void Restart(){
-        //Pausing the game
+        //Restarting the game
         restartMenuUI.SetActive(true);
         //Stopping the time
         Time.timeScale = 0f;
-        //GameOver = true;
+        GameOver = true;
     }
 
     public void LoadMenu(){
